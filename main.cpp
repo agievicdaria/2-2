@@ -1,4 +1,3 @@
-// main.cpp
 #include <iostream>
 #include "Integer.h"
 using namespace std;
@@ -9,17 +8,17 @@ int main() {
 
     cout << "Enter second integer: ";
     cin >> num2;
-    cout << "num1: " << num1.ToString() << endl;
-    cout << "num2: " << num2.ToString() << endl;
+    cout << "num1: " << num1 << endl;
+    cout << "num2: " << num2 << endl;
 
     Integer result1 = num1 + num2;
-    Integer result2 = ++num1;
-
     cout << "num1 + num2: " << result1 << endl;
-    cout << "num1++: " << result2 << endl;
 
-    Integer result3 = -num1;
-    cout << "-num1: " << result3 << endl;
+    Integer result2 = -num1;
+    cout << "-num1: " << result2 << endl;
+
+    Integer result3 = ++num2;
+    cout << "num1++: " << result3 << endl;
 
     cout << "Size of Integer without #pragma pack(1): " << sizeof(Integer) << endl;
 

@@ -1,4 +1,3 @@
-// Integer.h
 #pragma once
 #include <iostream>
 using namespace std;
@@ -16,12 +15,11 @@ public:
     int getValue() const {return value;}
     void setValue(int val);
 
-    string ToString() const;
-
+    operator string() const;
+    Integer& operator= (const Integer&);
     Integer& operator++();
     friend Integer operator-(const Integer& obj);
     friend Integer operator+(const Integer& a, const Integer& b);
-
     friend ostream& operator<<(ostream& os, const Integer& obj);
     friend istream& operator>>(istream& is, Integer& obj);
 };

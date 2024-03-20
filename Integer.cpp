@@ -1,4 +1,3 @@
-// Integer.cpp
 #include "Integer.h"
 #include <sstream>
 using namespace std;
@@ -33,15 +32,9 @@ Integer operator-(const Integer& obj) {
 Integer operator+(const Integer& a, const Integer& b) {
     return Integer(a.value + b.value);
 }
-// Integer operator+(Integer &a, Integer &b)
-// {
-//     Integer i(0);
-//     i.value = a.value + b.value;
-//     return i;
-// }
 
 ostream &operator<<(ostream &out, const Integer &obj) {
-    out << obj.value;
+    out << string(obj);
     return out;
 }
 
@@ -50,8 +43,13 @@ istream &operator>>(istream &in, Integer &obj) {
     return in;
 }
 
-string Integer::ToString() const {
-    stringstream sout;
-    sout << "value: " << value;
-    return sout.str();
+Integer::operator string () const {
+    stringstream ss;
+    ss << " value = " << value << endl;
+    return ss.str();
+}
+
+Integer& Integer::operator = (const Integer& i) {
+    value = i.value;
+    return *this;
 }
